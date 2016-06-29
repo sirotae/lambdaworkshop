@@ -18,18 +18,17 @@ public class Shop {
         random = new Random(name.charAt(0) * name.charAt(1) * name.charAt(2));
     }
 
-    public String getPrice(String product) {
-        double price = calculatePrice(product);
-        return name + ":" + price + ":" + price;
-    }
-
-    public double calculatePrice(String product) {
-        delay();
-        return random.nextDouble() * product.charAt(0) + product.charAt(1);
-    }
-
     public String getName() {
         return name;
+    }
+
+    public double getPrice(String product) {
+        return calculatePrice(product);
+    }
+
+    private double calculatePrice(String product) {
+        delay();
+        return random.nextDouble() * product.charAt(0) + product.charAt(1);
     }
 
     private static void delay() {
